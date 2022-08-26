@@ -5,7 +5,8 @@
   <div class="menu">
     <a v-for="(a, i) in 메뉴들" :key="i">{{ a }}</a>
   </div>
-  <Discount />
+  <Discount v-if="showDiscount === true" />
+
   <button @click="priceSort">가격순정렬</button>
   <button @click="sortBack">되돌리기</button>
   <Card
@@ -30,6 +31,8 @@ export default {
   name: "App",
   data() {
     return {
+   
+      showDiscount: true,
       원룸들오리지널: [...data],
       누른거: 0,
       원룸들: data,
@@ -52,9 +55,7 @@ export default {
       this.원룸들 = [...this.원룸들오리지널];
     },
   },
-  mounted() {
-
-  },
+ 
   components: {
     Discount: Discount,
     Modal,

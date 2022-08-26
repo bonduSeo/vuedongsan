@@ -36,6 +36,12 @@ export default {
       }
     },
   },
+  beforeUpdate() {
+    if (this.month == 2) {
+      alert("2개월 안됨");
+      this.month = 3;
+    }
+  },
   props: {
     원룸들: Object,
     누른거: Number,
